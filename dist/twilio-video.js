@@ -9340,7 +9340,7 @@ var RoomSignaling = function (_StateMachine) {
   }, {
     key: 'disconnect',
     value: function disconnect() {
-      return this._disconnect();
+      return this._disconnect('disconnect error');
     }
 
     /**
@@ -27929,7 +27929,7 @@ module.exports={
   "_resolved": "https://registry.npmjs.org/@twilio/webrtc/-/webrtc-4.3.1.tgz",
   "_shasum": "35acd0bda1ce65424d9617defb0b6d9b333c77c7",
   "_spec": "@twilio/webrtc@4.3.1",
-  "_where": "/home/circleci/project",
+  "_where": "C:\\Source\\twilio-video.js",
   "author": {
     "name": "Manjesh Malavalli",
     "email": "mmalavalli@twilio.com"

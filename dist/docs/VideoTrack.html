@@ -382,6 +382,181 @@ enabled; if the <a href="VideoTrack.html">VideoTrack</a> is not enabled, it is &
             
 <hr>
 <dt>
+    <h4 class="name" id="attach"><span class="type-signature"></span>attach(selector)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Attach the <a href="VideoTrack.html">VideoTrack</a> to an HTMLMediaElement selected by
+<code>document.querySelector</code>. The HTMLMediaElement could be an
+HTMLAudioElement or an HTMLVideoElement.</p>
+<p>If the HTMLMediaElement&apos;s <code>srcObject</code> is not set to a MediaStream,
+this method sets it to a new MediaStream containing the <a href="VideoTrack.html">VideoTrack</a>&apos;s
+MediaStreamTrack; otherwise, it adds the <a href="VideoTrack.html">VideoTrack</a>&apos;s
+MediaStreamTrack to the existing MediaStream. Finally, if there are any other
+MediaStreamTracks of the same kind on the MediaStream, this method removes
+them.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A query selector for the HTMLMediaElement to
+attach to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>mediaElement</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">HTMLMediaElement</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">const Video = require(&apos;twilio-video&apos;);
+
+const videoElement = document.createElement(&apos;video&apos;);
+videoElement.id = &apos;my-video-element&apos;;
+document.body.appendChild(videoElement);
+
+Video.createLocalVideoTrack().then(function(track) {
+  track.attach(&apos;#my-video-element&apos;);
+});</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id="attach"><span class="type-signature"></span>attach()</h4>
     
     
@@ -661,291 +836,6 @@ document.body.appendChild(videoElement);
 Video.createLocalVideoTrack().then(function(videoTrack) {
   videoTrack.attach(videoElement);
 });
-  </pre>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="attach"><span class="type-signature"></span>attach(selector)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Attach the <a href="VideoTrack.html">VideoTrack</a> to an HTMLMediaElement selected by
-<code>document.querySelector</code>. The HTMLMediaElement could be an
-HTMLAudioElement or an HTMLVideoElement.</p>
-<p>If the HTMLMediaElement&apos;s <code>srcObject</code> is not set to a MediaStream,
-this method sets it to a new MediaStream containing the <a href="VideoTrack.html">VideoTrack</a>&apos;s
-MediaStreamTrack; otherwise, it adds the <a href="VideoTrack.html">VideoTrack</a>&apos;s
-MediaStreamTrack to the existing MediaStream. Finally, if there are any other
-MediaStreamTracks of the same kind on the MediaStream, this method removes
-them.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A query selector for the HTMLMediaElement to
-attach to</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>mediaElement</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">HTMLMediaElement</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">const Video = require(&apos;twilio-video&apos;);
-
-const videoElement = document.createElement(&apos;video&apos;);
-videoElement.id = &apos;my-video-element&apos;;
-document.body.appendChild(videoElement);
-
-Video.createLocalVideoTrack().then(function(track) {
-  track.attach(&apos;#my-video-element&apos;);
-});</pre>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="detach"><span class="type-signature"></span>detach()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Detach the <a href="VideoTrack.html">VideoTrack</a> from all previously attached HTMLMediaElements.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>mediaElements</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;HTMLMediaElement&gt;</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">const mediaElements = videoTrack.detach();
-mediaElements.forEach(mediaElement =&gt; mediaElement.remove());
   </pre>
 
 
@@ -1268,6 +1158,116 @@ the <a href="VideoTrack.html">VideoTrack</a> is attached</p></td>
         <h5>Example</h5>
         
     <pre class="sunlight-highlight-javascript">videoTrack.detach(&apos;#my-video-element&apos;).remove();</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="detach"><span class="type-signature"></span>detach()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Detach the <a href="VideoTrack.html">VideoTrack</a> from all previously attached HTMLMediaElements.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>mediaElements</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;HTMLMediaElement&gt;</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">const mediaElements = videoTrack.detach();
+mediaElements.forEach(mediaElement =&gt; mediaElement.remove());
+  </pre>
 
 
     
@@ -2012,7 +2012,7 @@ begin playback.</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a>
 	
-		on 2020-07-29T00:03:22+00:00
+		on 2020-07-30T10:40:23+10:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

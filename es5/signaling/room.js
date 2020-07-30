@@ -213,7 +213,7 @@ var RoomSignaling = function (_StateMachine) {
   }, {
     key: 'disconnect',
     value: function disconnect() {
-      return this._disconnect();
+      return this._disconnect('disconnect error');
     }
 
     /**

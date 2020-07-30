@@ -471,179 +471,6 @@ Video.createLocalAudioTrack().then(function(audioTrack) {
             
 <hr>
 <dt>
-    <h4 class="name" id="attach"><span class="type-signature"></span>attach(mediaElement)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Attach the <a href="AudioTrack.html">AudioTrack</a> to an existing HTMLMediaElement. The
-HTMLMediaElement could be an HTMLAudioElement or an HTMLVideoElement.</p>
-<p>If the HTMLMediaElement&apos;s <code>srcObject</code> is not set to a MediaStream,
-this method sets it to a new MediaStream containing the <a href="AudioTrack.html">AudioTrack</a>&apos;s
-MediaStreamTrack; otherwise, it adds the MediaTrack&apos;s
-MediaStreamTrack to the existing MediaStream. Finally, if there are any other
-MediaStreamTracks of the same kind on the MediaStream, this method removes
-them.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>mediaElement</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">HTMLMediaElement</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The HTMLMediaElement to attach to</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <p>mediaElement</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">HTMLMediaElement</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">const Video = require(&apos;twilio-video&apos;);
-
-const videoElement = document.createElement(&apos;video&apos;);
-document.body.appendChild(videoElement);
-
-Video.createLocalAudioTrack().then(function(audioTrack) {
-  audioTrack.attach(videoElement);
-});
-  </pre>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
     <h4 class="name" id="attach"><span class="type-signature"></span>attach(selector)</h4>
     
     
@@ -810,6 +637,179 @@ document.body.appendChild(videoElement);
 Video.createLocalAudioTrack().then(function(track) {
   track.attach(&apos;#my-video-element&apos;);
 });</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="attach"><span class="type-signature"></span>attach(mediaElement)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Attach the <a href="AudioTrack.html">AudioTrack</a> to an existing HTMLMediaElement. The
+HTMLMediaElement could be an HTMLAudioElement or an HTMLVideoElement.</p>
+<p>If the HTMLMediaElement&apos;s <code>srcObject</code> is not set to a MediaStream,
+this method sets it to a new MediaStream containing the <a href="AudioTrack.html">AudioTrack</a>&apos;s
+MediaStreamTrack; otherwise, it adds the MediaTrack&apos;s
+MediaStreamTrack to the existing MediaStream. Finally, if there are any other
+MediaStreamTracks of the same kind on the MediaStream, this method removes
+them.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mediaElement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLMediaElement</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The HTMLMediaElement to attach to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>mediaElement</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">HTMLMediaElement</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">const Video = require(&apos;twilio-video&apos;);
+
+const videoElement = document.createElement(&apos;video&apos;);
+document.body.appendChild(videoElement);
+
+Video.createLocalAudioTrack().then(function(audioTrack) {
+  audioTrack.attach(videoElement);
+});
+  </pre>
 
 
     
@@ -1685,7 +1685,7 @@ begin playback.</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a>
 	
-		on 2020-07-29T00:03:21+00:00
+		on 2020-07-30T10:40:22+10:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
